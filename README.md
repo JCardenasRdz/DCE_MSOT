@@ -4,17 +4,43 @@ A collection of code to analyze Dynamoc Contrast-Enhanced (DCE) Multispectral Op
 ## MATLAB Interfacing Library to the ViewMSOT Proprietary File Format
 ### msotlib.itheramedical.com  
 
-1. INSTALL
 
-In order to be able to use loadMSOT, please add the following to your startup.m file:
-  - javaaddpath <DIRECTORY>\MSOTBeans\xbean.jar
-  - javaaddpath <DIRECTORY>\MSOTBeans\msotbeans.jar
+### INSTALL
+1. Place the `msotlib_rev701` folder in your MATLAB directory. If you do not know your default directory, type `userpath` in MATLAB's command window:
+```bash
+>> userpath
 
-Your startup.m file should reside in your MATLAB Startup directory (find out using
-the MATLAB command "userpath". If startup.m does not exist in this directory, please
-create it.
+ans =
 
-2. CONTENTS
+    'C:\Users\jdata\OneDrive\Documents\MATLAB'
+```
+After having copied the `msotlib_rev701` folder to the MATLAB directory, type the following in the command line to verify that is was copied ( I am including the output below):
+
+```bash
+>> cd 'C:\Users\jdata\OneDrive\Documents\MATLAB'
+>> pwd
+
+ans =
+
+    'C:\Users\jdata\OneDrive\Documents\MATLAB'
+
+>> ls
+
+.               ..              msotlib_rev701
+```
+
+2. `CD` to the  `MSOTBeans` folder under the `msotlib_rev701` folder:
+```bash
+>> cd msotlib_rev701\MSOTBeans
+```
+
+3. Add the location of two jar files under the `MSOTBeans` folder to your startup.m file
+```bash
+>> javaaddpath xbean.jar
+>> javaaddpath msotbeans.jar
+```
+
+### CONTENTS
 
 Listing of functions:
 - `listMSOT`:	    Lists contents of a study folder
@@ -24,6 +50,5 @@ Listing of functions:
 - `loadMSOTSignals`:   Loads optoacoustic Signals as acquired by the transducers
 
 
-3. USAGE
-
+### USAGE
 For usage please refer to the function documentation using help <function>
